@@ -7,6 +7,9 @@ import ListComponent from "./src/screens/ListComponent";
 import ImageScreen from "./src/screens/ImageScreen";
 import counterScreen from "./src/screens/counterScreen";
 import colorChangerScreen from "./src/screens/colorChangerScreen";
+import colorAdjustingScreen from "./src/screens/colorAdjustingScreen";
+import colorAdjustingScreenWithReducer from "./src/screens/colorAdjustingScreenWithReducer";
+
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
@@ -15,7 +18,9 @@ const navigator = createStackNavigator(
     List : ListComponent,
     ImageS: ImageScreen,
     counter:counterScreen,
-    colorChange:colorChangerScreen
+    colorChange:colorChangerScreen,
+    colorAdjust : colorAdjustingScreen,
+    colorAdjustReducer:colorAdjustingScreenWithReducer
   },
   {
     initialRouteName: "Home",
