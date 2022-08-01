@@ -12,7 +12,9 @@ const HomeScreen = ({navigation}) => {
     <Button title='Navigate to counterScreen' onPress={()=>navigation.navigate('counter')}/>
     <Button title='Navigate to colorChangerScreen' onPress={()=>navigation.navigate('colorChange')}/>
     <Button title='Navigate to colorAdjustingScreen' onPress={()=>navigation.navigate('colorAdjust')}/>
-    <Button title ='Navigate this task with Reducer' onPress={()=>navigation.navigate('colorAdjustReducer')}/>
+    <Button title ='Navigate colorAdjustingScreen with Reducer' onPress={()=>navigation.navigate('colorAdjustReducer')}/>
+    <Button title ='Navigate counterScreen with Reducer' onPress={()=>navigation.navigate('counterReducer')}/>
+    <Button title ='Navigate ti InputNameScreen' onPress={()=>navigation.navigate('InputName')}/>
   </View>
    
 };
