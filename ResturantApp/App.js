@@ -6,12 +6,12 @@ import { createStackNavigator } from "react-navigation-stack";
  import ResturantDivComponent from './src/components/ResturantDivComponent';
  import SearchBar from './src/components/SearchBar';
 const navigator = createStackNavigator({
-  Search : SearchScreen,
+  SearchS : SearchScreen,
   Div:ResturantDivComponent,
   Search : SearchBar
 },
 {
-  initialRouteName : 'Search',
+  initialRouteName : 'SearchS',
   defaultNavigationOptions:{
     title : 'Business Search'
   }
