@@ -11,6 +11,7 @@ import colorAdjustingScreen from "./src/screens/colorAdjustingScreen";
 import colorAdjustingScreenWithReducer from "./src/screens/colorAdjustingScreenWithReducer";
 import counterScreenWithReducer from "./src/screens/counterScreenWithReducer";
 import InputNameScreen from "./src/screens/InputNameScreen";
+import BoxScreen from "./src/screens/BoxScreen";
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
@@ -23,7 +24,8 @@ const navigator = createStackNavigator(
     colorAdjust : colorAdjustingScreen,
     colorAdjustReducer:colorAdjustingScreenWithReducer,
     counterReducer:counterScreenWithReducer,
-    InputName:InputNameScreen
+    InputName:InputNameScreen,
+    Box : BoxScreen
   },
   {
     initialRouteName: "Home",
