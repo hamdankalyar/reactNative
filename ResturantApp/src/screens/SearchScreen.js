@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState,useEffect } from 'react';
+import { View, Text, StyleSheet ,ScrollView} from 'react-native';
 import SearchBar from '../components/SearchBar';
-import yelp from '../api/yelp';
+import ResturantDivComponent from '../components/ResturantDivComponent';
+import useResults from '../hooks/useResults';
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
-  const [results,setResults]=useState([]);
-
-  const searchApi = async () =>{
-    try{
-    const response = await yelp.get('/search',{
-      params:{
-        limit:50,
-        term:term,
-        location:"san francesco"
-      }
+  const [searchApi,results,errorMessage]=useResults();
+  const filterResultsByPrices =(price) => {
+    //price === $ || $$  || $$$
+    return results.filter(result => {
+      return result.price ===price;
     });
-    setResults(response.data.businesses);
-  } catch(error){
-    console.log(error)
-  }
   };
-  return (
-    <View>
+    return (
+    <ScrollView>
       <SearchBar
        term={term} 
        onTermChange={setTerm}
       onTermSubmint={searchApi}
         />
+        {errorMessage ? <Text>{errorMessage}</Text> : null}
+        
+        <ResturantDivComponent results={filterResultsByPrices('$')} title = "Cost Effective"></ResturantDivComponent>
+        <ResturantDivComponent results={filterResultsByPrices('$$')} title = "Bit Pricer"></ResturantDivComponent>
+        <ResturantDivComponent results={filterResultsByPrices('$$$')} title = "Big Spender"></ResturantDivComponent>
       
-      <Text>{results.length}</Text>
-    </View>
+      
+    </ScrollView>
   );
 };
 
