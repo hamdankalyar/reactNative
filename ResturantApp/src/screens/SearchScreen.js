@@ -13,20 +13,20 @@ const SearchScreen = () => {
     });
   };
     return (
-    <ScrollView>
+    <>
       <SearchBar
        term={term} 
        onTermChange={setTerm}
       onTermSubmint={searchApi}
         />
         {errorMessage ? <Text>{errorMessage}</Text> : null}
-        
+      <ScrollView>
         <ResturantDivComponent results={filterResultsByPrices('$')} title = "Cost Effective"></ResturantDivComponent>
         <ResturantDivComponent results={filterResultsByPrices('$$')} title = "Bit Pricer"></ResturantDivComponent>
         <ResturantDivComponent results={filterResultsByPrices('$$$')} title = "Big Spender"></ResturantDivComponent>
+      </ScrollView>
       
-      
-    </ScrollView>
+    </>
   );
 };
 
